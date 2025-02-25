@@ -4,12 +4,18 @@ import { clearCurrentOrder } from "./components/localStorage.ts";
 import { formatCreditCardNumber, showModal,closeModal } from "./components/modal.ts";
 import { addOrderItem, removeOrderItem, initialise } from "./components/order.ts";
 // is a way to avoid excessive user clicks
-import { throttle } from "debouncing";
+import pThrottle from "p-throttle";
 
 // initialises the menu items and if neccesary renders orders from localStorage
 initialise()
+
+const throttle = pThrottle({
+	limit: 2,
+	interval: 1000
+});
+
 // debounced it to avoid excessive user clicks from adding more items then intended
-document.addEventListener("click", throttle(handleClick, 250), false)
+document.addEventListener("click", throttle(handleClick), false)
 
 // listen to submit 
 document.addEventListener("submit", handleSubmit)

@@ -16,12 +16,7 @@ export default defineConfig({
     cssMinify: 'lightningcss',
     minify: true,
     rollupOptions: {
-      input: ['index.html']
-    },
-    terserOptions: {
-      format: {
-        comments: false
-      },
+      input: ['./index.html']
     },
   },
   esbuild: {

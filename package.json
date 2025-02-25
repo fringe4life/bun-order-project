@@ -1,20 +1,20 @@
 {
   "name": "bun-order-project",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
   "devDependencies": {
     "lightningcss": "^1.29.1",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
     "vite-plugin-lightningcss": "^0.0.5"
   },
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "type": "module",
   "dependencies": {
-    "debouncing": "^22.7.26"
+    "p-throttle": "^7.0.0"
   }
 }

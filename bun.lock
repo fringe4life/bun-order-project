@@ -4,7 +4,7 @@
     "": {
       "name": "bun-order-project",
       "dependencies": {
-        "debouncing": "^22.7.26",
+        "p-throttle": "^7.0.0",
       },
       "devDependencies": {
         "lightningcss": "^1.29.1",
@@ -109,8 +109,6 @@
 
     "caniuse-lite": ["caniuse-lite@1.0.30001700", "", {}, "sha512-2S6XIXwaE7K7erT8dY+kLQcpa5ms63XlRkMkReXjle+kf6c5g38vyMl+Z5y8dSxOFDhcFe+nxnn261PLxBSQsQ=="],
 
-    "debouncing": ["debouncing@22.7.26", "", {}, "sha512-qIrr6oQjxKkt4if93H6+Y/+w7iD29lXDYV360O9coiSMQZbwDKOVviBNFqh+FnhJJl1mo2GuVrSEZiWR6gsR/g=="],
-
     "detect-libc": ["detect-libc@1.0.3", "", { "bin": { "detect-libc": "./bin/detect-libc.js" } }, "sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.104", "", {}, "sha512-Us9M2L4cO/zMBqVkJtnj353nQhMju9slHm62NprKTmdF3HH8wYOtNvDFq/JB2+ZRoGLzdvYDiATlMHs98XBM1g=="],
@@ -146,6 +144,8 @@
     "nanoid": ["nanoid@3.3.8", "", { "bin": { "nanoid": "bin/nanoid.cjs" } }, "sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w=="],
 
     "node-releases": ["node-releases@2.0.19", "", {}, "sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw=="],
+
+    "p-throttle": ["p-throttle@7.0.0", "", {}, "sha512-aio0v+S0QVkH1O+9x4dHtD4dgCExACcL+3EtNaGqC01GBudS9ijMuUsmN8OVScyV4OOp0jqdLShZFuSlbL/AsA=="],
 
     "picocolors": ["picocolors@1.1.1", "", {}, "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="],
 
