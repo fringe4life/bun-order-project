@@ -5,6 +5,7 @@ import { formatCreditCardNumber, showModal,closeModal } from "./components/modal
 import { addOrderItem, removeOrderItem, initialise } from "./components/order.ts";
 // is a way to avoid excessive user clicks
 import pThrottle from "p-throttle";
+import burgerImg from './burger-img.jpeg'
 
 // initialises the menu items and if neccesary renders orders from localStorage
 initialise()
