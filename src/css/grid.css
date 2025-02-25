@@ -1,0 +1,23 @@
+.grid {
+	display: grid;
+	grid-template-columns:
+		[grid-start] min(3%, 3.125rem)
+		[menu-start icon-start] fit-content(3.125rem)
+		[menu-description-start icon-end] minmax(min(6.25rem, 100%), 2fr)
+		[menu-description-end] .5fr
+		[button-start] minmax(1.875rem, 3.125rem)
+		[menu-end button-end] min(3%, 3.125rem)
+		[grid-end];
+	/* otherwise does not takeup full height of parent */
+	height: 100%;
+}
+
+/* passes the columns to child elements */
+.subgrid-columns {
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+.row-gap-small {
+	row-gap: .5rem;
+}

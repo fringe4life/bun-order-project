@@ -1,0 +1,23 @@
+
+/* layout */
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.payment-dialog {
+	width: clamp(15.625rem, 80%, 31.25rem);
+
+	position: absolute;
+	inset: 50% 0 0 50%;
+	transform: translateX(-50%);
+}
+
+.modal-input {
+	padding: 0.875rem;
+}
+
+.payment-form-fields {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}

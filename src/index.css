@@ -1,0 +1,28 @@
+@import url(/src/css/reset.css) layer(reset);
+@import url(/src/css/components.css) layer(components);
+@import url(/src/css/grid.css) layer(layout);
+@import url(/src/css/utilities.css) layer(utilities);
+
+@layer reset, base, layout, components, utilities;
+
+/* 
+*	used layers for first time!! :) much easier then anitcipated
+*   though apparently can get tricky particularly with the !important keyword
+ */
+@layer base {
+	/* typography */
+	body {
+		font-family: Smythe, serif;
+		font-size: 1rem;
+		font-weight: 400;
+		/* not sure if this is the best place for this... */
+		text-underline-position: from-font;
+		text-decoration-skip-ink: none;
+	}
+	/* Layout */
+	body {
+		padding: 0;
+		margin: 0 auto;
+		max-width: 600px;
+	}
+}
