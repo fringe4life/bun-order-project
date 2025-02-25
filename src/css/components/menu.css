@@ -45,6 +45,7 @@
 	/* grid layout */
 	grid-column: button;
 	justify-self: center;
+	padding: 0;
 
 	/* typography */
 	font-size: 2rem;
