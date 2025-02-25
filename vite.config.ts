@@ -1,19 +1,12 @@
 import { defineConfig } from 'vite'
-import lightningcss from "vite-plugin-lightningcss"
+//import lightningcss from "vite-plugin-lightningcss"
 // https://vite.dev/config/
 
 export default defineConfig({
-  plugins: [
-      lightningcss({
-        browserslist: 'last 3 versions',
-        minify: true
-      })     
-  ],
-  css: {
-    transformer: 'lightningcss'
-  },
+  plugins: [ ],
+  
   build: {
-    cssMinify: 'lightningcss',
+    cssMinify: 'esbuild',
     minify: true,
     rollupOptions: {
       input: ['./index.html']
@@ -21,5 +14,6 @@ export default defineConfig({
   },
   esbuild: {
     drop: ['console', 'debugger']
-  }
+  },
+  assetsInclude: ['./src/burger-img.jpeg']
 })
