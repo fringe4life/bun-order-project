@@ -45,6 +45,8 @@
 	/* grid layout */
 	grid-column: button;
 	justify-self: center;
+	align-self: center;
+	padding: 0;
 
 	/* typography */
 	font-size: 2rem;
@@ -52,6 +54,7 @@
 	/* make a circle */
 	width: 3.125rem;
 	height: 3.125rem;
+	line-height: 3.125rem;
 	border-radius: 50%;
 
 	/* styles */
