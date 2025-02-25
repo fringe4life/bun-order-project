@@ -1,16 +1,26 @@
-/* typography */
-
-.menu-icon {
-	font-size: 5rem;
-	@media (width < 600px) {
-		font-size: 2.5rem;
-	}
-}
-
 .menu-item-title,
 .menu-item-ingredients,
 .menu-item-price {
 	margin: 0 0 0.5em 0;
+}
+
+.menu-item {
+	/* layout */
+	border-bottom: 1px solid black;
+	grid-column: menu;
+}
+
+.menu-icon {
+	/* typography */
+	font-size: 5rem;
+	@media (width < 600px) {
+		font-size: 2.5rem;
+	}
+	/* layout */
+	grid-column: icon;
+	grid-row: 1 / -1;
+	margin: 0;
+	align-self: self-start;
 }
 
 .menu-item-title {
@@ -18,9 +28,9 @@
 	line-height: 1.1;
 }
 
-.menu-item-ingredients,
-.menu-item-price {
-	line-height: clamp(1.25rem, 1vw + 0.75rem, 1.5rem);
+.menu-item-info {
+	grid-column: menu-description;
+	padding-top: .5em;
 }
 
 .menu-item-ingredients {
@@ -32,41 +42,19 @@
 }
 
 .menu-add-btn {
-	text-align: center;
-	font-size: clamp(1.5rem, 2vw + 0.75rem, 2rem);
-	vertical-align: middle;
-}
-
-/* layout */
-
-.menu-item {
-	border-bottom: 1px solid black;
-	grid-column: menu;
-}
-
-.menu-icon {
-	grid-column: icon;
-	grid-row: 1 / -1;
-	margin: 0;
-	align-self: self-start;
-}
-
-.menu-item-info {
-	grid-column: menu-description;
-	padding-top: .5em;
-}
-
-.menu-add-btn {
 	/* grid layout */
 	grid-column: button;
-	grid-row: 1;
 	justify-self: center;
+
+	/* typography */
+	font-size: 2rem;
 
 	/* make a circle */
 	width: 3.125rem;
 	height: 3.125rem;
 	border-radius: 50%;
 
+	/* styles */
 	background-color: white;
 	border: 1.5px solid #dedede;
 

@@ -1,12 +1,8 @@
-/* typography */
-
 .order-confirmation-body {
+	/* typography */
 	color: #065f46;
-}
 
-/* layout */
-
-.order-confirmation-body {
+	/* layout */
 	grid-column: menu-start / menu-end;
 	text-align: center;
 	background-color: #ecfdf5;

@@ -5,4 +5,5 @@
 @import url(/src/css/components/modal.css);
 @import url(/src/css/components/popover.css);
 @import url(/src/css/components/confirmation.css);
+@import url(/src/css/components/footer.css);
 /* this file exists to enable all components have the same layer */

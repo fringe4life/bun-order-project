@@ -2,10 +2,9 @@
   "name": "bun-order-project",
   "version": "0.0.0",
   "devDependencies": {
-    "lightningcss": "^1.29.1",
+    "@types/node": "^22.13.5",
     "typescript": "~5.7.2",
-    "vite": "^6.2.0",
-    "vite-plugin-lightningcss": "^0.0.5"
+    "vite": "^6.2.0"
   },
   "private": true,
   "scripts": {
@@ -15,7 +14,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@types/node": "^22.13.5",
     "p-throttle": "^7.0.0"
   }
 }
