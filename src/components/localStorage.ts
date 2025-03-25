@@ -1,12 +1,21 @@
 import type{ LocalStorage } from "../vite-env.d.ts";
 import menuArray from "./data.ts";
 const CURRENT_ORDER = 'currentOrder' as const
-function getCurrentOrder(){
-    const currentOrder = localStorage.getItem(CURRENT_ORDER) 
+
+/**
+ * @abstract Gets the current order if it exits else returns an empty array
+ * @returns The localStorage object for the order
+ */
+function getCurrentOrder<T>(current = CURRENT_ORDER){
+    const currentOrder = localStorage.getItem(current) 
     const lsObj = currentOrder && JSON.parse(currentOrder) || []
-    return lsObj satisfies LocalStorage.OrderSummary[]
+    return lsObj satisfies T
 }
 
+/**
+ * 
+ * @param lsObj 
+ */
 function storeCurrentOrder(lsObj:LocalStorage.OrderSummary[]){
     localStorage.setItem(CURRENT_ORDER, JSON.stringify(lsObj))
 }

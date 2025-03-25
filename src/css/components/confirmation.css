@@ -1,6 +1,6 @@
 .order-confirmation-body {
 	/* typography */
-	color: #065f46;
+	color: hsl(from #065f46 h s l);
 
 	/* layout */
 	grid-column: menu-start / menu-end;
@@ -8,4 +8,14 @@
 	background-color: #ecfdf5;
 	width: 100%;
 	margin-top: 40px;
+	opacity: 1;
+	scale: 1;
+	transition: opacity 500ms ease-in, scale 500ms ease-in;
+}
+
+@starting-style {
+	.order-confirmation-body {
+		opacity: 0;
+		scale: 0;
+	}
 }

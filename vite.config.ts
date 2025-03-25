@@ -1,6 +1,10 @@
 import { defineConfig } from 'vite'
-
 import path from 'node:path'
+
+
+/**
+ * @abstract configures the building of the site
+ */
 export default defineConfig({
   plugins: [ ],
   resolve: {

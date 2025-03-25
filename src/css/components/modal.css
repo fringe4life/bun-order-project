@@ -1,14 +1,21 @@
-
 dialog::backdrop {
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: hsl(from black h s l / 0.75);
 }
 
 .payment-dialog {
-	width: clamp(15.625rem, 80%, 31.25rem);
+	isolation: isolate;
+	/* z-index: 5; */
+	width: clamp(300px, 50%, 450px);
+	padding: 16px;
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	transition: inset 500ms ease-in-out;
+	/* transition-behavior: allow-discrete; */
+}
 
-	position: absolute;
-	inset: 50% 0 0 50%;
-	transform: translateX(-50%);
+.closing {
+	animation: --close 500ms ease-in-out;
 }
 
 .modal-input {
@@ -19,4 +26,16 @@ dialog::backdrop {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
+}
+
+@starting-style {
+	.payment-dialog {
+		inset: 0 0 -100% 0;
+	}
+}
+
+@keyframes --close {
+	to {
+		inset: -100% 0 0 0;
+	}
 }

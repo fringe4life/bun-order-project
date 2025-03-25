@@ -3,21 +3,19 @@ import { showConfirmation } from "./components/confirmation.ts";
 import { clearCurrentOrder } from "./components/localStorage.ts";
 import { formatCreditCardNumber, showModal,closeModal } from "./components/modal.ts";
 import { addOrderItem, removeOrderItem, initialise } from "./components/order.ts";
-// is a way to avoid excessive user clicks
-import pThrottle from "p-throttle";
 
 import './index.css'
 
 // initialises the menu items and if neccesary renders orders from localStorage
 initialise()
 
-const throttle = pThrottle({
-	limit: 2,
-	interval: 1000
-});
+/**
+ * @abstract avoids opening to many dialogs
+ */
+let modalAlreadyVisible = false
 
 // debounced it to avoid excessive user clicks from adding more items then intended
-document.addEventListener("click", throttle(handleClick), false)
+document.addEventListener("click", handleClick)
 
 // listen to submit 
 document.addEventListener("submit", handleSubmit)
@@ -31,18 +29,21 @@ document.addEventListener('input', handleInput)
  */
 function handleClick(e:MouseEvent){
     console.log(e)
-	const target = e.target as HTMLButtonElement;
+	const target = e.target as HTMLElement;
     
-
+    console.log(target)
     // only the + buttons have data-id
 	if (target.dataset.id) {
 		addOrderItem(Number.parseInt(target.dataset.id));
 	} else if(target.dataset.removeId){ // only remove buttons have this data-remove-id
         removeOrderItem(Number.parseInt(target.dataset.removeId))
-    } else if (target.id === 'complete-order'){ //user wants to place order
+    } else if (target.id === 'complete-order' && !modalAlreadyVisible){ //user wants to place order
+        modalAlreadyVisible = true
         showModal("modal")
+
     } else if(target.id ==='payment-form'){
         closeModal("payment-form", "popover-modal-dismiss")
+        modalAlreadyVisible = false
     }
 }
 

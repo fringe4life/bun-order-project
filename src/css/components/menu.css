@@ -44,29 +44,24 @@
 .menu-add-btn {
 	/* grid layout */
 	grid-column: button;
-	justify-self: center;
+	align-self: center;
 	padding: 0;
 
 	/* typography */
-	font-size: 2rem;
+	font-size: 2em;
 
 	/* make a circle */
-	width: 3.125rem;
 	height: 3.125rem;
-	line-height: 3.125rem;
+	line-height: 1;
 	border-radius: 50%;
 
 	/* styles */
 	background-color: white;
 	border: 1.5px solid #dedede;
 
-	/* transition to/from hover,active */
-	transition: border-color 250ms ease-in-out;
-
-	&:active,
-	&:hover {
-		cursor: pointer;
-	}
+	/* interactivity */
+	transition: border-color 500ms ease-in-out;
+	cursor: pointer;
 	&:hover {
 		border-color: black;
 	}

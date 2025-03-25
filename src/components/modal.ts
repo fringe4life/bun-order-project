@@ -6,7 +6,6 @@ import { getChildFromTemplate } from "./utilities.ts";
  * @param templateId the template id from the template tag 
  */
 function showModal(templateId:string){
-    // get template from generic function!!! so cool :)
 	const dialog = getChildFromTemplate<HTMLDialogElement>(templateId)
     
     document.body.appendChild(dialog)
@@ -18,10 +17,16 @@ function showModal(templateId:string){
  * @param id the id of the string from the HTML Dialog Element
  */
 function closeModal(id:string, popover: string | null = null){
+    // TODO: check and make sure it is actually a htmldialogelement
+    // instead of using type assertion
     const dialog = document.getElementById(id) as HTMLDialogElement
-    console.log(dialog, ' closeModal')
-    dialog.close()
-    console.log('modal closed')
+    dialog.classList.add('closing')
+    
+    window.setTimeout(() =>  {
+        dialog.close(); 
+        dialog.remove();
+    }, 500)
+   
     if(popover){
         showPopover(popover)
     }

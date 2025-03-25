@@ -27,26 +27,26 @@ function renderOrderItem({name,id,price}: MenuItem){
         renderOrder()
         orderSummaryList = document.getElementById('order-summary-list') as HTMLElement
     }
-    // could definitely use a refactor!!!! very repetitive code here
+    // create the parent element for the buttons and p tags below
     const li = document.createElement('li')
     li.classList.add('order-summary-item', 'subgrid-columns')
+    // add the item name
     const p = document.createElement('p')
     p.classList.add('order-summary-item-name')
     p.textContent = name
     li.appendChild(p)
+    // add the remove btn
     const btn = document.createElement('button')
     btn.classList.add('order-summary-remove-btn')
     btn.textContent = 'remove'
     btn.setAttribute('data-remove-id', id.toString())
     li.appendChild(btn)
+    // create the price
     const p2 = document.createElement('p')
     p2.classList.add('order-summary-price')
     p2.textContent = `$${price}`
     li.appendChild(p2)
-    // less safe way to do this
-    // li.innerHTML = `<p class='order-summary-item-name'>${name}</p> 
-    //             <button data-remove-id='${id}' class='order-summary-remove-btn'>remove</button>
-    //             <p class='order-summary-price'>$${price}</p>`
+
     orderSummaryList.appendChild(li)
     updatePriceTotal()
 }
@@ -123,7 +123,7 @@ function initialise(){
 
     // checks if user has order items in localStorage
     // if so render them
-    if(getCurrentOrder().length > 0) {
+    if(getCurrentOrder<LocalStorage.OrderSummary[]>().length > 0) {
         renderOrder()
         renderOrderItems()
     }
